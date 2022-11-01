@@ -65,7 +65,7 @@ public class Estacionamento {
                     listarLocação();
                     break;
             }
-        }while(opcao!= 0);
+        }while(opcao!= 8);
         scanner.close();
     } 
 
