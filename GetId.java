@@ -1,16 +1,9 @@
-import java.util.ArrayList;
+public class GetId{
 
-public interface GetId {
+    public int id;
 
-    public int getId();
-
-    public static int getNextId(ArrayList<? extends GetId> lista) {
-        int id = 0;
-        for (GetId object : lista) {
-            if (object.getId() > id) {
-                id = object.getId();
-            }
-        }
-        return id + 1;
+    @Override
+    public String toString(){
+        return "ID: " + this.id + "\n";
     }
 }
