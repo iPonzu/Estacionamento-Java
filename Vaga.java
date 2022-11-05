@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 
-public class Vaga {
+public class Vaga extends Generic {
     
-    private int id;
     private String numero;
     private String tipo;
     private String tamanho;
@@ -10,8 +9,7 @@ public class Vaga {
 
     private static ArrayList<Vaga> vagas = new ArrayList<Vaga>();
 
-    public Vaga(int id, String numero, String tipo, String tamanho, String preco) {
-        this.id = id;
+    public Vaga(String numero, String tipo, String tamanho, String preco) {
         this.numero = numero;
         this.tipo = tipo;
         this.tamanho = tamanho;
@@ -49,6 +47,15 @@ public class Vaga {
     }
     public void setPreco(String preco){
         this.preco = preco;
+    }
+
+    public static Vaga verificarId(int id) throws Exception{
+        for(Vaga vaga : vagas){
+            if(vaga.id == id){
+                return vaga;
+            }
+        }
+        throw new Exception("Vaga não existe");
     }
 
     public static Vaga getVaga(int id) throws Exception{
