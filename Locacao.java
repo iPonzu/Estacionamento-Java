@@ -53,4 +53,3 @@ public class Locacao {
         + "Data: " + data + "\n";
     }
 }
-
