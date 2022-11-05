@@ -6,6 +6,7 @@ public class Moto extends Veiculo{
     private String cilindrada;
 
     private static ArrayList<Moto> motos = new ArrayList<Moto>();
+   
     public Moto(
         int id,
         String nome,
@@ -15,6 +16,8 @@ public class Moto extends Veiculo{
         super(id, nome);
         this.placa = placa;
         this.cilindrada = cilindrada;
+
+        motos.add(this);
     }
 
     public String getPlaca(){
@@ -40,6 +43,11 @@ public class Moto extends Veiculo{
             }
         }
         throw new Exception ("Moto não encontrado");
+    }
+
+    public static void removeMoto(int id) throws Exception{
+        Moto moto = getMoto(id);
+        motos.remove(moto);
     }
 
     @Override 
